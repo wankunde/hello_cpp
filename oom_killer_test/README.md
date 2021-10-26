@@ -7,6 +7,7 @@ Develop in vscode and run in vmware node.
 ## VSCode 快捷键
 
 * 查看Function List : Command + Shift + O
+* 代码格式化快捷键: Shift + Option + F
 
 ## C 语言头文件说明
 
