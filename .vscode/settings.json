@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "unistd.h": "c",
-        "malloc.h": "c",
-        "string.h": "c",
-        "fcntl.h": "c"
-    }
-}
