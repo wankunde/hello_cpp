@@ -1,10 +1,11 @@
-CFLAGS = -fPIC  -mavx2 -mfma
+# 编译选项中加入 -g 才可以DEBUG
+CFLAGS = -fPIC  -mavx2 -mfma -g
 
 # -mavx
 # -mavx2
 # -mfma
 
-CXXFLAGS='-fPIC'
+CXXFLAGS='-fPIC -g'
 
 CC = gcc
 SRC_DIR = src
@@ -27,7 +28,8 @@ fmatest: $(OUTPUT_DIR)/fmatest.o
 	$(CC) -o $(OUTPUT_DIR)/$@ $< 
 
 # 从源代码生成汇编文件
-$(OUTPUT_DIR)/%.o: $(SRC_DIR)/%.c $(OUTPUT_DIR)
+# Bugfix: 这里可能还监测不到 $(OUTPUT_DIR) 已经被创建，所以先忽略这个依赖
+$(OUTPUT_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 CREATE_TARGET_DIRS:
